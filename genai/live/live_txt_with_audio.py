@@ -60,8 +60,8 @@ async def generate_content() -> list[str]:
         response = []
 
         async for event in session.receive():
-            if(event.server_content and event.server_content.output_transcription):
-                message= event.server_content.output_transcription.text
+            if event.server_content and event.server_content.output_transcription:
+                message = event.server_content.output_transcription.text
                 if message is not None:
                     response.append(message)
 
